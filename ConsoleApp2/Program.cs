@@ -21,7 +21,12 @@
 
         static void Main(string[] args)
         {
-            var results = Class1.GetNumbers(short.MaxValue, [(3, "Ryan"), (5, "Overton")]);
+            List<(int, string)> modulators = new List<(int, string)> {
+                (3, "Ryan"),
+                (5, "Overton")
+            };
+
+            var results = Class1.GetNumbers(50000000, modulators.ToArray());
             foreach (var result in results)
             {
                 Console.WriteLine(result);

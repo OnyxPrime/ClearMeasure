@@ -8,7 +8,8 @@ namespace ClassLibrary1
     public class Class1
     {
         /// <summary>
-        ///  This method iterates from 1 to the <c>upperBound</c> passed in checking if each number is divisible by the modulators and appending the correspondoing modulator string. If it is not divisible by any modulator, the result will contain the string value of numerical index being tested against.
+        ///  This method iterates from 1 to the <c>upperBound</c> passed in checking if each number is divisible by the modulators and appending the correspondoing modulator string. 
+        ///  If it is not divisible by any modulator, the result will contain the string value of numerical index being tested against.
         /// </summary>
         /// <param name="upperBound">The number of values to iterate through and perform modulus operations against.</param>
         /// <param name="modulators">An array of tuples <c>(int, string)</c> containing the number to perform modulus operation against and a corresponding string value to append.</param>
@@ -17,10 +18,7 @@ namespace ClassLibrary1
 
         public static IEnumerable<String> GetNumbers(int upperBound, (int rightOperand, string value)[] modulators)
         {
-            if (upperBound > Array.MaxLength)
-                throw new ArgumentOutOfRangeException(nameof(upperBound));
-
-            if (upperBound < 1)
+            if (upperBound < 1 || upperBound > 50000000)
                 throw new ArgumentOutOfRangeException(nameof(upperBound));
 
             var results = new List<string>();
@@ -40,21 +38,6 @@ namespace ClassLibrary1
                     results.Add(val.ToString());
             }
             return results;
-        }
-
-        public class NumbersObject
-        {
-            public string Value { get; private set; } = "";
-
-            public NumbersObject(string value)
-            {
-                Value = value;
-            }
-
-            public override string ToString()
-            {
-                return Value;
-            }
         }
     }
 }

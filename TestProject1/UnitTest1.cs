@@ -18,9 +18,9 @@ namespace TestProject1
         }
 
         [Test]
-        public void GetNumbers_Throws_ArgumentOutOfRangeException_For_Upper_Bound_More_Than_ArrayMax()
+        public void GetNumbers_Throws_ArgumentOutOfRangeException_For_Upper_Bound_More_Than_50000000()
         {
-            var ex = Assert.Throws<ArgumentOutOfRangeException>(() => Class1.GetNumbers(Array.MaxLength + 1, [(3, "Ryan"), (5, "Overton")]));
+            var ex = Assert.Throws<ArgumentOutOfRangeException>(() => Class1.GetNumbers(50000001, [(3, "Ryan"), (5, "Overton")]));
         }
 
         [Test]
