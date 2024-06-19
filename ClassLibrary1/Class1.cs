@@ -11,8 +11,8 @@ namespace ClassLibrary1
         ///  This method iterates from 1 to the <c>upperBound</c> passed in checking if each number is divisible by the modulators and appending the correspondoing modulator string. 
         ///  If it is not divisible by any modulator, the result will contain the string value of numerical index being tested against.
         /// </summary>
-        /// <param name="upperBound">The number of values to iterate through and perform modulus operations against.</param>
-        /// <param name="modulators">An array of tuples <c>(int, string)</c> containing the number to perform modulus operation against and a corresponding string value to append.</param>
+        /// <param name="upperBound">The number of values to iterate through and perform modulus operations against. Max value: 50000000</param>
+        /// <param name="modulators">An array of tuples <c>(int, string)</c> containing the number to perform modulus operation against and a corresponding string value.</param>
         /// <returns>Returns an enumeration of strings corresponding to each number checked.</returns>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when the <c>upperBound</c> passed in is outside of 1 and the max length of an array.</exception>
 
@@ -21,7 +21,7 @@ namespace ClassLibrary1
             if (upperBound < 1 || upperBound > 50000000)
                 throw new ArgumentOutOfRangeException(nameof(upperBound));
 
-            var results = new List<string>();
+            var results = new List<String>();
             for (var i = 0; i < upperBound; i++)
             {
                 var val = i + 1;
