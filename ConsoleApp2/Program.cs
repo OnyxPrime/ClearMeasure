@@ -3,22 +3,6 @@
     using ClassLibrary1;
     internal class Program
     {
-
-        public class MyValue
-        {
-            public string Value { get; set; } = "";
-
-            public  MyValue(string value)
-            {
-                Value = value;
-            }
-
-            public override string ToString()
-            {
-                return Value; 
-            }
-        }
-
         static void Main(string[] args)
         {
             List<(int, string)> modulators = new List<(int, string)> {
